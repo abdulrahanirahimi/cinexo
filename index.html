@@ -411,7 +411,7 @@ async function applyFilter(){
   const params={sort_by:'popularity.desc'};
   if(g)params.with_genres=isA?`16,${g}`:g;
   if(y){if(t==='tv')params.first_air_date_year=y;else params.primary_release_year=y;}
-  document.getElementById('filter-row-wrap').style.display='';
+  document.getElementById('filter-row-wrap').style.display='block';
   document.getElementById('r-filter').innerHTML=skeletonRow();
   const res=await api(`discover/${t}`,params);
   renderRow('r-filter',(res.results||[]).slice(0,20),t);
